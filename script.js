@@ -1,4 +1,25 @@
+// your JavaScript file
+function press(instruction){
+const container = document.querySelector("#glass");
+
+const content = document.createElement("p");
+content.classList.add("content");
+content.textContent = instruction;
+
+glass.appendChild(content);
+}
+//not working rn
+function clear(){
+const container = document.querySelector("#glass");
+
+const content = document.createElement("p");
+content.Remove(content);
+
+}
+
+
 const add = function(a,b) {
+    console.log(a+b)
     return a+b;
 };
 
@@ -14,7 +35,7 @@ const multiply = function(numbers) {
   return product;
 };
 
-const  operate = function(a,b,s){
+const  operate = function(arrayOperation){
     if (s==='+'){
         return add(a,b);
     } else if (s==='-'){

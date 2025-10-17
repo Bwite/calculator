@@ -9,30 +9,30 @@
 <body>
     <div id="calculator-outline">
         <div class="screen">
-            <div class="glass">
-                <p>0</p>
+            <div id="glass">
+                
             </div>
         </div>
         <div class="body">
             <div class="numbers">
-                <div class="options"> <button>9</button> </div>
-                <div class="options"> <button>8</button> </div>
-                <div class="options"> <button>7</button> </div>
-                <div class="options"> <button>6</button> </div>
-                <div class="options"> <button>5</button> </div>
-                <div class="options"> <button>4</button> </div>
-                <div class="options"> <button>3</button> </div>
-                <div class="options"> <button>2</button> </div>
-                <div class="options"> <button>1</button> </div>
-                <div class="options"> <button></button> </div>
-                <div class="options"> <button>0</button> </div>
-                <div class="options"> <button>=</button> </div>
+                <div class="options"> <button onclick="press(9)">9</button> </div>
+                <div class="options"> <button onclick="press(8)">8</button> </div>
+                <div class="options"> <button onclick="press(7)">7</button> </div>
+                <div class="options"> <button onclick="press(6)">6</button> </div>
+                <div class="options"> <button onclick="press(5)">5</button> </div>
+                <div class="options"> <button onclick="press(4)">4</button> </div>
+                <div class="options"> <button onclick="press(3)">3</button> </div>
+                <div class="options"> <button onclick="press(2)">2</button> </div>
+                <div class="options"> <button onclick="press(1)">1</button> </div>
+                <div class="options"> <button>C</button> </div>
+                <div class="options"> <button onclick="press(0)">0</button> </div>
+                <div class="options"> <button onclick="press('=')">=</button> </div>
             </div>
             <div class="operators">
-                <div class=" operator "> <button>+</button></div>
-                <div class="operator "> <button>-</button> </div>
-                <div class="operator  "> <button>*</button> </div>
-                <div class=" operator "> <button>/</button></div> 
+                <div class=" operator "> <button onclick="press('+')">+</button></div>
+                <div class="operator "> <button onclick="press('-')">-</button> </div>
+                <div class="operator  "> <button onclick="press('*')">*</button> </div>
+                <div class=" operator "> <button onclick="press('/')">/</button></div> 
             
             </div>
         </div>
