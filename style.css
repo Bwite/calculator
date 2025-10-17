@@ -53,7 +53,7 @@ body{
 .numbers{
     display:flex;
     flex-wrap: wrap;
-    flex:2 1 0;
+    flex:3 1 0;
     background-color: black;
    
 }
