@@ -34,8 +34,16 @@ const multiply = function(numbers) {
   const product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue, 1);
   return product;
 };
+function getFromDom(){
+  const nodelist = document.querySelectorAll('.content');
+  console.log(nodelist);
+  
+
+
+}
 
 const  operate = function(arrayOperation){
+
     if (s==='+'){
         return add(a,b);
     } else if (s==='-'){
