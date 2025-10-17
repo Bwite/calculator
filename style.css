@@ -27,7 +27,7 @@ body{
 }
 .glass{
     display: flex;
-    font-size: 48px;
+    font-size: 60px;
     font-weight: 900;
     justify-content: right;
     align-items: right;
@@ -54,7 +54,7 @@ body{
     display:flex;
     flex-wrap: wrap;
     flex:2 1 0;
-    background-color: brown;
+    background-color: black;
    
 }
 .operators{
@@ -67,6 +67,7 @@ body{
     display:flex;
     width: 33%;
     justify-content: space-around;
+    
 }
 .operator{
     display: flex;
@@ -80,6 +81,8 @@ button{
   
    flex: auto;
    background-color: darkgray;
+   font-weight: 600;
+   font-size: 24px;
 }
 
 
