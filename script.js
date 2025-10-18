@@ -3,7 +3,6 @@
 let statement = [];
 function press(instruction){
 
-console.log(glass.length);
 const content = document.createElement("p");
 content.classList.add("content");
 content.textContent = instruction;
@@ -18,6 +17,18 @@ if (instruction !=='='){
    erase('content')
    const threshold = ['+' , '-' , '*' , '/'];
     const leftside = statement.filter(num =>  threshold.includes(num));
+    if (leftside.length > 1) {
+    console.log(`The array contains more than one "${threshold}".`);
+    const glass = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = `ERROR`;
+      glass.appendChild(content);
+  } else {
+  
+
+  
     //const rightside = statement.filter(num => num < threshold);
     console.log("on the left : ", leftside); // Output: [ 8, 10, 7 ]
     const stringWithoutCommas = statement.join(''); // Joins elements with no separator
@@ -70,7 +81,7 @@ if (instruction !=='='){
 console.log(statement);
 
 }
-
+}
 const add = function(a,b) {
     
     a=parseInt(a);
