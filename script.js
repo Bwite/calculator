@@ -14,7 +14,7 @@ if (instruction !=='='){
   if (statement.length<14){
      statement.push(instruction);
   }
-}else{
+}else if (instruction === '='){
    erase('content')
    const threshold = ['+' , '-' , '*' , '/'];
     const leftside = statement.filter(num =>  threshold.includes(num));
@@ -70,15 +70,6 @@ if (instruction !=='='){
 console.log(statement);
 
 }
-//not working rn
-function clear(){
-const container = document.querySelector("#glass");
-
-const content = document.createElement("p");
-content.Remove(content);
-
-}
-
 
 const add = function(a,b) {
     
@@ -152,6 +143,19 @@ function erase(contentClass){
 const content = document.querySelectorAll('.'+contentClass) ;
 
 if(content){
+    
+    content.forEach(function(content) {
+    content.remove();
+    
+    });
+    
+}
+}
+function erase2(contentClass){
+const content = document.querySelectorAll('.'+contentClass) ;
+
+if(content){
+    statement.length=0;
     content.forEach(function(content) {
     content.remove();
     
