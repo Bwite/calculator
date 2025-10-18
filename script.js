@@ -7,11 +7,11 @@ console.log(glass.length);
 const content = document.createElement("p");
 content.classList.add("content");
 content.textContent = instruction;
-if (glass.childElementCount<14){
+if (glass.childElementCount<15){
 glass.appendChild(content);
 }
 if (instruction !=='='){
-  if (statement.length<15){
+  if (statement.length<14){
      statement.push(instruction);
   }
 }else{
@@ -94,7 +94,10 @@ const add = function(a,b) {
 const subtract = function(a,b) {
    a=parseInt(a);
    b=parseInt(b);
-	return a-b;
+   statement.length=0;
+   result=a-b;
+   statement.push(result);
+	 return result;
 };
 const divide = function(a,b){
     a=parseInt(a);
@@ -102,14 +105,19 @@ const divide = function(a,b){
     number=a/b;
     const roundedString = number.toFixed(3); 
     const roundedNumber = parseFloat(roundedString);
+    statement.length=0;
+    statement.push(roundedNumber);
     return roundedNumber;
 }
 
 const multiply = function(a,b) {
    a=parseInt(a);
    b=parseInt(b);
- 
-   return a*b;
+   result= a*b;
+   statement.length=0;
+   statement.push(result);
+  return result;
+   
 };
 function getFromDom(){
   
