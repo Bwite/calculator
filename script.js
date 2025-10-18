@@ -26,9 +26,22 @@ statement.push(instruction);
     console.log(a);
     console.log(b);
     if (leftside =='+'){
-      console.log('the sum is'+add(a,b));
+      console.log('the sum is : '+add(a,b));
+      result=add(a,b);
+      const container = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = result;
+
+      glass.appendChild(content);
     } else if (leftside == '-') {
-      console.log('this is subtraction' + subtract(a,b));
+      console.log('this is subtraction : ' + subtract(a,b));
+    } else if (leftside == '/') {
+      console.log('this is division : ' + divide(a,b));
+    }
+    else if (leftside == '*') {
+      console.log('this is multiplication : ' + multiply(a,b));
     }
 
 }
@@ -68,7 +81,7 @@ const multiply = function(a,b) {
    a=parseInt(a);
    b=parseInt(b);
  
-  return a*b;
+   return a*b;
 };
 function getFromDom(){
   
