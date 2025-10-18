@@ -2,16 +2,18 @@
 
 let statement = [];
 function press(instruction){
-const glass = document.querySelector("#glass");
 
+console.log(glass.length);
 const content = document.createElement("p");
 content.classList.add("content");
 content.textContent = instruction;
-
+if (glass.childElementCount<14){
 glass.appendChild(content);
-
+}
 if (instruction !=='='){
-statement.push(instruction);
+  if (statement.length<15){
+     statement.push(instruction);
+  }
 }else{
    erase('content')
    const threshold = ['+' , '-' , '*' , '/'];
@@ -28,7 +30,8 @@ statement.push(instruction);
     console.log(b);
     if (leftside =='+'){
       result=add(a,b);
-      const container = document.querySelector("#glass");
+     
+      const glass = document.querySelector("#glass");
 
       const content = document.createElement("p");
       content.classList.add("content");
@@ -37,7 +40,7 @@ statement.push(instruction);
       glass.appendChild(content);
     } else if (leftside == '-') {
       result=subtract(a,b);
-      const container = document.querySelector("#glass");
+      const glass = document.querySelector("#glass");
 
       const content = document.createElement("p");
       content.classList.add("content");
@@ -45,7 +48,7 @@ statement.push(instruction);
       glass.appendChild(content);
     } else if (leftside == '/') {
       result=divide(a,b);
-      const container = document.querySelector("#glass");
+      const glass = document.querySelector("#glass");
 
       const content = document.createElement("p");
       content.classList.add("content");
@@ -54,7 +57,7 @@ statement.push(instruction);
     }
     else if (leftside == '*') {
       result=multiply(a,b);
-      const container = document.querySelector("#glass");
+      const glass = document.querySelector("#glass");
 
       const content = document.createElement("p");
       content.classList.add("content");
@@ -78,10 +81,14 @@ content.Remove(content);
 
 
 const add = function(a,b) {
+    
     a=parseInt(a);
     b=parseInt(b);
     console.log(a+b)
-    return a+b;
+    statement.length=0;
+    result=a+b;
+    statement.push(result);
+    return result;
 };
 
 const subtract = function(a,b) {
@@ -92,7 +99,10 @@ const subtract = function(a,b) {
 const divide = function(a,b){
     a=parseInt(a);
     b=parseInt(b);
-    return a/b;
+    number=a/b;
+    const roundedString = number.toFixed(3); 
+    const roundedNumber = parseFloat(roundedString);
+    return roundedNumber;
 }
 
 const multiply = function(a,b) {
@@ -136,6 +146,8 @@ const content = document.querySelectorAll('.'+contentClass) ;
 if(content){
     content.forEach(function(content) {
     content.remove();
+    
     });
+    
 }
 }
