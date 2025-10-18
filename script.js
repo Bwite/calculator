@@ -102,6 +102,14 @@ const subtract = function(a,b) {
 	 return result;
 };
 const divide = function(a,b){
+  if (a===0 || b === 0){
+    const glass = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = `ERROR`;
+      glass.appendChild(content);
+  }else{
     a=parseInt(a);
     b=parseInt(b);
     number=a/b;
@@ -110,6 +118,7 @@ const divide = function(a,b){
     statement.length=0;
     statement.push(roundedNumber);
     return roundedNumber;
+  }
 }
 
 const multiply = function(a,b) {
