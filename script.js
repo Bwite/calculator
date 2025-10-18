@@ -26,7 +26,6 @@ statement.push(instruction);
     console.log(a);
     console.log(b);
     if (leftside =='+'){
-      console.log('the sum is : '+add(a,b));
       result=add(a,b);
       const container = document.querySelector("#glass");
 
@@ -36,12 +35,30 @@ statement.push(instruction);
 
       glass.appendChild(content);
     } else if (leftside == '-') {
-      console.log('this is subtraction : ' + subtract(a,b));
+      result=subtract(a,b);
+      const container = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = result;
+      glass.appendChild(content);
     } else if (leftside == '/') {
-      console.log('this is division : ' + divide(a,b));
+      result=divide(a,b);
+      const container = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = result;
+      glass.appendChild(content);
     }
     else if (leftside == '*') {
-      console.log('this is multiplication : ' + multiply(a,b));
+      result=multiply(a,b);
+      const container = document.querySelector("#glass");
+
+      const content = document.createElement("p");
+      content.classList.add("content");
+      content.textContent = result;
+      glass.appendChild(content);
     }
 
 }
