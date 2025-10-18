@@ -2,7 +2,7 @@
 
 let statement = [];
 function press(instruction){
-const container = document.querySelector("#glass");
+const glass = document.querySelector("#glass");
 
 const content = document.createElement("p");
 content.classList.add("content");
@@ -13,6 +13,7 @@ glass.appendChild(content);
 if (instruction !=='='){
 statement.push(instruction);
 }else{
+   erase('content')
    const threshold = ['+' , '-' , '*' , '/'];
     const leftside = statement.filter(num =>  threshold.includes(num));
     //const rightside = statement.filter(num => num < threshold);
@@ -128,3 +129,13 @@ const sum = function(numbers) {
 	const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
   return sum;
 };
+
+function erase(contentClass){
+const content = document.querySelectorAll('.'+contentClass) ;
+
+if(content){
+    content.forEach(function(content) {
+    content.remove();
+    });
+}
+}
